@@ -23,6 +23,7 @@ function HamburgerNavigation(props) {
             Accountability Partner
 					</div>
         </li>
+        {/* <div className="red-stripe"></div> */}
         <li className='dashboard-link'>
          <Link className='sdcs-logo' to={`/admin/dashboard?auth_token=${props.auth_token}`}>
             <div id='logo-style-student-page'></div></Link>
