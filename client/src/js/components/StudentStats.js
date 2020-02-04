@@ -253,8 +253,16 @@ class Standups extends Component {
         {accPartnerWindow}
 
         <div className="header-name">
+         
           <h4>{this.props.studentInfo.name}</h4>
+          <div className="x"></div>
+       
         </div>
+        
+
+
+
+
         <main className="wrapper">
           <div className="data-section-container-grid">
             <DataSectionForStudentStats

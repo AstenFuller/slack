@@ -30,7 +30,7 @@ function HamburgerNavigation(props) {
           <p className='dash-btn'></p>
         </li>
       </ul>
-      <div className="x"></div>
+      
     </React.Fragment>
   );
 }
