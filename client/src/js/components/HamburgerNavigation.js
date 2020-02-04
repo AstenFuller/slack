@@ -30,7 +30,10 @@ function HamburgerNavigation(props) {
           <p className='dash-btn'></p>
         </li>
       </ul>
-      
+        <div className='x'onClick={props.openStudentAbsenteeInfo()}>
+         
+        </div>
+        
     </React.Fragment>
   );
 }

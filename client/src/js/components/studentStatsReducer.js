@@ -84,6 +84,13 @@ export default function studentStatsReducer(state = defaultState, action) {
       };
     }
 
+    case "TOGGLE_ABSENTEE_WINDOW": {
+
+      return {
+        ...state,
+        absenteeWindowOpen: payload,
+      }
+    }
     default: {
       return state;
     }
