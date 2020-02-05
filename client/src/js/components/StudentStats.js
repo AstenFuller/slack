@@ -185,7 +185,7 @@ class Standups extends Component {
     if (this.props.absenteeWindowOpen) {
       absenteeWindow = (
         <AbsenteeInfo
-          accPartnerData={this.props.studentInfo}
+          absenteeData={this.props.studentInfo}
           closeWindow={() => this.toggleAbsenteeWindow}
         />
       )
@@ -267,6 +267,7 @@ class Standups extends Component {
           openStudentAccountabilityPartnerInfo={() => this.toggleAccPartnerWindow}
           openStudentAbsenteeInfo={() => this.toggleAbsenteeWindow}
           auth_token={localStorage.getItem('token')}
+          
         />
         {editStudentWindow}
         {accPartnerWindow}
