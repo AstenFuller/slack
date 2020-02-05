@@ -219,7 +219,7 @@ class DashboardContainer extends Component {
 
     return (
       <React.Fragment>
-        <div className="container col-sm-12">
+        <div className="container col-sm-12 white-space-reducer">
           <div className="row">
             <div className="col-sm-2">
               <div className="card">

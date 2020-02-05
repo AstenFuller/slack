@@ -998,6 +998,10 @@ req.body.checkin{
   grid-template-columns: minmax(0, 1fr);
 }
 
+.white-space-reducer {
+  margin-bottom: -37px;
+}
+
 #add-part-btn {
   background-color: #990000;
   color: $default-text-light;
