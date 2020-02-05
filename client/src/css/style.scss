@@ -263,6 +263,10 @@ body {
   text-decoration: none;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 #cancel-btn:hover{
   background-color: #797575;
   background-image: linear-gradient(#b9b8b8,#d4d1d1);

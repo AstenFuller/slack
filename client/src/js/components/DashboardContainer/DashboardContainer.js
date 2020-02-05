@@ -269,7 +269,7 @@ class DashboardContainer extends Component {
                   <option value={"ALL"}>ALL</option>
                 </select>
                 <div
-                  className="card"
+                  className="card cursor-pointer"
                   onClick={() => this.toggle("view-data-panel")}
                 >
                   <h2>View data for</h2>
@@ -290,7 +290,7 @@ class DashboardContainer extends Component {
             </div>
             <div className="col-sm-4 student-col-size">
               <span
-                className="card"
+                className="card cursor-pointer"
                 onClick={() => this.toggle("standups-panel")}
               >
                 <h2>Standups</h2>
@@ -318,7 +318,7 @@ class DashboardContainer extends Component {
             </div>
             <div className="col-sm-4 student-col-size">
               <span
-                className="card"
+                className="card cursor-pointer"
                 onClick={() => this.toggle("checkins-panel")}
               >
                 <h2>Checkins</h2>
