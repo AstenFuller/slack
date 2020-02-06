@@ -7,6 +7,7 @@ import {
   calculateIndividualCheckinData,
   calculateIndividualStandupsData,
   calculateIndividualWakatimeData,
+  calculateIndividualAbsences,
 } from '../../../../common/utilities';
 import EditStudent from './EditStudent';
 import AccPartnerInfo from './AccPartnerInfo'
@@ -267,7 +268,7 @@ class Standups extends Component {
           openStudentAccountabilityPartnerInfo={() => this.toggleAccPartnerWindow}
           openStudentAbsenteeInfo={() => this.toggleAbsenteeWindow}
           auth_token={localStorage.getItem('token')}
-          
+
         />
         {editStudentWindow}
         {accPartnerWindow}
@@ -276,7 +277,7 @@ class Standups extends Component {
         <div className="header-name">
 
           <h4>{this.props.studentInfo.name}</h4>
-          
+
 
         </div>
 

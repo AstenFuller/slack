@@ -13,7 +13,7 @@ function AbsenteeInfo (props) {
 				</div>
 				<hr/>
 				<div className='acc-partner-row'>
-					<p><strong>Number of Absentees</strong></p>
+					<p><strong>Date of Absences</strong></p>
 					{/* <p>{partner_email ? partner_email : 'N/A'}</p> */}
 				</div>
 				<hr/>

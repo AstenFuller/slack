@@ -51,6 +51,14 @@ function calculateDashboardStandupsData(standups, students) {
     nonDelinquents,
   };
 }
+
+function calculateIndividualAbsences(absences) {
+  return ({
+    featured: '0',
+    footer: 'absences'
+  })
+}
+
 function calculateDashboardCheckinData(activeCheckins, students) {
   // assumes a student cannot have more than one active checkin
   // u gotta filter activeCheckins to be 'activeCheckinsToday'
