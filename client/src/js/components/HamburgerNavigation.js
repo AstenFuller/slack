@@ -20,19 +20,21 @@ function HamburgerNavigation(props) {
         </li>
         <li>
           <div className='secondary-btn acc-partner-btn' onClick={props.openStudentAccountabilityPartnerInfo()}>
-            Accountability Partner
+             Partner
 					</div>
         </li>
+        <li><div className='secondary-btn'onClick={props.openStudentAbsenteeInfo()}>Absence</div></li>
         {/* <div className="red-stripe"></div> */}
         <li className='dashboard-link'>
          <Link className='sdcs-logo' to={`/admin/dashboard?auth_token=${props.auth_token}`}>
             <div id='logo-style-student-page'></div></Link>
           <p className='dash-btn'></p>
         </li>
+        
+
       </ul>
-        <div className='x'onClick={props.openStudentAbsenteeInfo()}>
          
-        </div>
+        
         
     </React.Fragment>
   );

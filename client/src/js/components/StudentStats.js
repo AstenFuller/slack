@@ -7,7 +7,6 @@ import {
   calculateIndividualCheckinData,
   calculateIndividualStandupsData,
   calculateIndividualWakatimeData,
-  calculateIndividualAbsences,
 } from '../../../../common/utilities';
 import EditStudent from './EditStudent';
 import AccPartnerInfo from './AccPartnerInfo'
@@ -345,6 +344,7 @@ function mapStoreToProps(store) {
     editWindowOpen: store.studentStats.editWindowOpen,
     authToken: store.dashboard.authToken,
     accPartnerWindowOpen: store.studentStats.accPartnerWindowOpen,
+    absenteeWindowOpen: store.studentStats.absenteeWindowOpen,
     studentAbsences: store.studentStats.studentAbsences,
   };
 }

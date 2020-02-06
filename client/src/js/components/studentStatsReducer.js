@@ -9,6 +9,7 @@ const defaultState = {
   editWindowOpen: false,
   accPartnerWindowOpen: false,
   studentAbsences: [],
+  absenteeWindowOpen: false,
 };
 export default function studentStatsReducer(state = defaultState, action) {
   const { type, payload } = action;
