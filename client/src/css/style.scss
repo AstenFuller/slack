@@ -134,6 +134,23 @@ h2 {
   text-align: center;
 }
 
+.saveNoteEdit {
+  margin-top: 6px;
+}
+
+.acc-partner-container1 {
+  background-image: linear-gradient(#f1f1f1,#ececec);
+	border: 2px solid black;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+  justify-content: space-around;
+  margin-top: 25px;
+  text-align: center;
+  padding-bottom: 90px;
+  margin-top: 10px;
+}
+
 .add-edit-student-row{
 	width: 300px;
 	height: 40px;
@@ -292,6 +309,10 @@ body {
 
 .data {
   text-align: center;
+}
+
+.dateAhref {
+   cursor: pointer;
 }
 
 .data-section-container-flex {
