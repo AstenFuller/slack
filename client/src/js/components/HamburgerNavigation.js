@@ -6,53 +6,59 @@ function HamburgerNavigation(props) {
   return (
 
     <React.Fragment>
+      <div className='pad1 '>
       <div className='dashboard-link'>
         <Link className='sdcs-logo' to={`/admin/dashboard?auth_token=${props.auth_token}`}>
           <div id='logo-style-student-page'></div></Link>
         {/* <p className='dash-btn'></p> */}
       </div>
-      <nav id="page-nav">
+        <nav id="page-nav">
+          <div className='pad'></div>
+          <label for="hamburger">&#9776;</label>
+          <input type="checkbox" id="hamburger" />
+          <br></br>
+          {/* <br></br> */}
 
-        <label for="hamburger">&#9776;</label>
-        <input type="checkbox" id="hamburger" />
-        <br></br>
 
-        
-        <ul className='navigation'>
-          <li className='hamCentering2'>
-            <button>
-              <div className='hamCentering2' onClick={props.openStudentAbsenteeInfo()}>
-                Absences
+          <ul
+            className='navigation'>
+            <li
+              className='hamCentering2'>
+              <button>
+                <div
+                  onClick={props.openStudentAbsenteeInfo()}>
+                  Absences
             </div>
-            </button>
-          </li>
-          <li className='hamCentering2'>
-            <button>
-              <div className='' onClick={props.openStudentAccountabilityPartnerInfo()}>
-                Partner
-					  </div>
-            </button>
-          </li>
-          <li className='hamCentering2'>
-            <button>
-              <div className='' onClick={props.openStudentEditWindow()}>
-                Edit Student
-					</div>
-            </button>
-          </li>
-          <li className='hamCentering3'>
-            <Link className='' to={`/admin/login`}
-              onClick={() => localStorage.removeItem('token')}
-            >Logout
+              </button>
+            </li>
+            <li
+              className='hamCentering2'>
+              <button>
+                <div
+                  onClick={props.openStudentAccountabilityPartnerInfo()}>
+                  Partner
+                </div>
+              </button>
+            </li>
+            <li
+              className='hamCentering2'>
+              <button>
+                <div
+                  onClick={props.openStudentEditWindow()}>
+                  Edit Student
+				    </div>
+              </button>
+            </li>
+            <li
+              className='hamCentering3'>
+              <Link className='' to={`/admin/login`}
+                onClick={() => localStorage.removeItem('token')}
+              >Logout
         </Link>
-
-          </li>
-          {/* <div className="red-stripe"></div> */}
-
-
-
-        </ul>
-      </nav>
+            </li>
+          </ul>
+        </nav>
+      </div>
       <hr id='lineDecorating'></hr>
 
       {/* <nav id="page-nav">
