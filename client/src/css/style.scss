@@ -471,7 +471,6 @@ header {
 .header-name {
   text-align: center;
   margin-top: 15px;
-  color: #900;
 }
 
 header .date {
@@ -1220,6 +1219,8 @@ th {
 }
 
 @media screen and (max-width: 768px){
+ 
+
   #page-nav label {
     float: right;
     display: inline-block;
@@ -1235,6 +1236,7 @@ th {
   #page-nav ul li {
     display: block;
   }
+
   #page-nav ul li {
     border-top: 1px solid #333;
   }
@@ -1242,6 +1244,7 @@ th {
   #page-nav ul {
     display: none;
   }
+
   #page-nav input:checked ~ ul {
     display: block;
 
@@ -1279,20 +1282,26 @@ html, body {
   text-align: center;
   font-weight: bolder;
   background: green($color: #8d2c2c);
-  text-decoration-color: black;
+  // text-decoration-color: black;
   cursor: pointer;
 }
 
 .hamCentering:hover {
   color: rgb(161, 161, 161);
+  text-align: center;
+  font-weight: bolder;
 }
 
 .hamCentering1:hover {
   color: rgb(161, 161, 161);
+  text-align: center;
+  font-weight: bolder;
 }
 
 .hamCentering2:hover {
   color: rgb(161, 161, 161);
+  text-align: center;
+  font-weight: bolder;
 }
 
 .hamCentering3:hover {
@@ -1321,7 +1330,7 @@ a:hover {
 
 #lineDecorating {
   color: red;
-  max-width: 331px;
+  max-width: 382px;
   margin-right: 36px;
   margin-top: 0px;
 }
