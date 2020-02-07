@@ -11,6 +11,7 @@ import {
 import EditStudent from './EditStudent';
 import AccPartnerInfo from './AccPartnerInfo';
 import AbsenteeInfo from './AbsenteeInfo';
+import appAbsenceC from './AppAbsenceC';
 import {
   getStudentInfo,
   updateStudentInfo,
@@ -183,12 +184,14 @@ class Standups extends Component {
 
     let absenteeWindow = null;
     if (this.props.absenteeWindowOpen) {
+     
       absenteeWindow = (
         <AbsenteeInfo
           closeWindow={() => this.toggleAbsenteeWindow}
         />
       )
     }
+    console.log(this.props.absenteeWindowOpen)
 
     let keyMetrics = [];
     let keyClassMetrics = [];
@@ -345,6 +348,7 @@ function mapStoreToProps(store) {
     accPartnerWindowOpen: store.studentStats.accPartnerWindowOpen,
     absenteeWindowOpen: store.studentStats.absenteeWindowOpen,
     studentAbsences: store.studentStats.studentAbsences,
+    absenteeInfo: store.absenteeInfo.toggleWindow
   };
 }
 

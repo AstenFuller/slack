@@ -1,17 +1,33 @@
 import React from 'react';
 import AppAbsenceC from '../AppAbsenceC';
-import {toggleEditWindow} from './absenteeActions';
+import {
+	toggleEditWindow, 
+	getId,
+	getDate,
+	} from './absenteeActions';
+import { relativeTimeThreshold } from 'moment';
+import AbsenteeEdit from './AbsenteeEdit'
 
 
 class AbsenteeInfo extends React.Component {
 	constructor(props){
 		super(props);
 		this.openEditWindow = this.openEditWindow.bind(this);
+		this.closeEditWindow = this.closeEditWindow.bind(this);
 	}
 
-	openEditWindow() {
-			const { dispatch } = this.props;
-			dispatch(toggleEditWindow(!this.props.toggleWindow));
+	openEditWindow(e) {
+		const { dispatch } = this.props;
+		const currentDate = e.target.innerHTML;
+		const studentId = e.target.id;
+		dispatch(getDate(currentDate));
+		dispatch(getId(studentId));
+		dispatch(toggleEditWindow(!this.props.toggleWindow));
+	}
+
+	closeEditWindow() {
+		const { dispatch } = this.props;
+		dispatch(toggleEditWindow(!this.props.toggleWindow));
 	}
 
 	render() {
@@ -26,11 +42,18 @@ class AbsenteeInfo extends React.Component {
 					</div>
 					
 					<hr className='linePad'/>
-					<React.Fragment className='acc-partner-row'>
-						<p className='namePad'><strong>Date of Absences</strong></p>
-						{this.props.studentAbsences.map( student => <a onClick={this.openEditWindow}>{student.date.slice(0,10)}</a>)}
-						{console.log(this.props.studentAbsences)}
-					</React.Fragment>
+					<p className='namePad'><strong>Date of Absences</strong></p>
+					{!this.props.toggleWindow ? this.props.studentAbsences.map((student, i) => 
+					<a 
+						onClick={this.openEditWindow} 
+						id={student.id} 
+						key={i} 
+						>{student.date.slice(0,10)} 
+					</a>): 
+					<AbsenteeEdit 
+						id={this.props.currentId} 
+						date={this.props.currentDate}
+					/>}
 					<br />
 					<div className='acc-partner-row'>
 						<button className='return-btn' onClick={this.props.closeWindow()}>Return</button>

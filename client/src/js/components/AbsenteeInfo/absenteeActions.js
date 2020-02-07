@@ -6,3 +6,17 @@ export function toggleEditWindow(isOpen) {
       });
     };
   }
+
+export function getId(id) {
+    return {
+            type: "GET_CURRENT_ID",
+            payload: id,
+        }
+    };
+
+export function getDate(date) {
+    return {
+        type: "GET_CURRENT_DATE",
+        payload: date,
+    }
+}

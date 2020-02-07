@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import AbsenceC from './AbsenceC';
 
 class AppAbsenceC extends Component {
     constructor(props) {
@@ -79,17 +78,11 @@ class AppAbsenceC extends Component {
 
     render() {
         let fullabsences = this.state.absences.map((notes, index) => {
-
-
-            return (
-                <AbsenceC key={index} id={notes.id} notes={notes}
-                    edit={this.editNote} save={(text, excuses) => this.saveNote(index, notes.id, text, excuses)} />
-            );
         });
 
 
         return (
-          
+
             <div className=''>
 
                 <div className='card-header' id=''></div>
@@ -108,18 +101,18 @@ class AppAbsenceC extends Component {
                 <div className='card-footer' id=''>
                     <button className='saveNoteEdit' onClick={() => { this.addNew() }} type='button' id=''>Save</button>
                 </div>
-           
-            <div className=''>
-            </div>
-            <div className='card' id=''>
-                <div className='card-header' id=''></div>
+
                 <div className=''>
-                    {this.state.absences.length === 0 ? <strong></strong> : <strong></strong>} 
-                    <br></br>
-                    {this.state.absences.length === 0 ? '' : <ul>{fullabsences}</ul>} 
                 </div>
-                
-            </div >
+                <div className='card' id=''>
+                    <div className='card-header' id=''></div>
+                    <div className=''>
+                        {this.state.absences.length === 0 ? <strong></strong> : <strong></strong>}
+                        <br></br>
+                        {this.state.absences.length === 0 ? '' : <ul>{fullabsences}</ul>}
+                    </div>
+
+                </div >
             </div >
             // </div>
             //   </div>

@@ -6,6 +6,8 @@ function mapStoreToProps(store) {
         studentAbsences: store.studentStats.studentAbsences,
         studentInfo: store.studentStats.studentInfo,
         toggleWindow: store.absenteeInfo.toggleWindow,
+        currentId: store.absenteeInfo.currentId,
+        currentDate: store.absenteeInfo.currentDate,
     };
 }
 

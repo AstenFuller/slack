@@ -1,5 +1,7 @@
 const defaultState = {
-    toggleWindow: false
+    toggleWindow: false,
+    currentId: '',
+    currentDate: '',
   };
   
 export default function absenteeInfo (state = defaultState, action) {
@@ -10,6 +12,18 @@ export default function absenteeInfo (state = defaultState, action) {
           ...state,
           toggleWindow: payload
         }
+      }
+      case "GET_CURRENT_ID": {
+          return {
+              ...state,
+              currentId: payload
+          }
+      }
+      case "GET_CURRENT_DATE": {
+          return {
+              ...state,
+              currentDate: payload
+          }
       }
       default: {
         return state;
