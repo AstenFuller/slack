@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import  AbsenteeInfo from './AbsenteeInfo';
+import  AbsenteeInfo from './AbsenteeInfo/AbsenteeInfo';
 
 class AbsenceC extends Component {
 	constructor(props) {
@@ -16,7 +16,7 @@ class AbsenceC extends Component {
 		this.save = this.save.bind(this);
 		this.editAbsence = this.editAbsence.bind(this);
         this.toggleAbsenteeWindow = this.toggleAbsenteeWindow.bind(this);
-        this.toggleMenu = this.toggleMenu.bind(this);
+        // this.toggleMenu = this.toggleMenu.bind(this);
 	}
 
 	absenteeInformation(e) {

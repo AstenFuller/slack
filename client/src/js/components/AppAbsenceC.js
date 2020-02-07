@@ -5,7 +5,7 @@ class AppAbsenceC extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            excueseOrNa: '0',
+            excuses: '0',
             notes: '',
             absences: [],
             newId: 0
@@ -30,7 +30,7 @@ class AppAbsenceC extends Component {
         let absencesCopy = this.state.absences;
         absencesCopy.push({
             text: this.state.inputText,
-            excueseOrNa: this.state.excueseOrNa,
+            excuses: this.state.excuses,
             editable: false,
             id: this.state.newId += 1,
             completed: false,
@@ -56,11 +56,11 @@ class AppAbsenceC extends Component {
         })
     };
 
-    saveNote(i, id, text, excueseOrNa) {
+    saveNote(i, id, text, excuses) {
         let absencesCopy = this.state.absences.slice();
         let newAbsence = {
             text,
-            excueseOrNa,
+            excuses,
             editable: false,
             id,
             completed: false
@@ -71,7 +71,7 @@ class AppAbsenceC extends Component {
     };
 
     selectOnChange(event) {
-        this.setState({ excueseOrNa: event.target.value });
+        this.setState({ excuses: event.target.value });
     };
 
 
@@ -83,7 +83,7 @@ class AppAbsenceC extends Component {
 
             return (
                 <AbsenceC key={index} id={notes.id} notes={notes}
-                    edit={this.editNote} save={(text, excueseOrNa) => this.saveNote(index, notes.id, text, excueseOrNa)} />
+                    edit={this.editNote} save={(text, excuses) => this.saveNote(index, notes.id, text, excuses)} />
             );
         });
 
@@ -99,10 +99,10 @@ class AppAbsenceC extends Component {
                 </div>
 
                 <div className=''>
-                    <select name='excueseOrNa' className="" onChange={this.selectOnChange}>
+                    <select name='excuses' className="" onChange={this.selectOnChange}>
                         <option value={0}>Excused or NE</option>
-                        <option id='excueseOrNa-1' value={1} className='excueseOrNaList'>Excused</option>
-                        <option id='excueseOrNa-2' value={2} className='excueseOrNaList'>Not Excused</option>
+                        <option id='excuses-1' value={1} className='excusesList'>Excused</option>
+                        <option id='excuses-2' value={2} className='excusesList'>Not Excused</option>
                     </select>
                 </div>
                 <div className='card-footer' id=''>

@@ -9,8 +9,8 @@ import {
   calculateIndividualWakatimeData,
 } from '../../../../common/utilities';
 import EditStudent from './EditStudent';
-import AccPartnerInfo from './AccPartnerInfo'
-import AbsenteeInfo from './AbsenteeInfo'
+import AccPartnerInfo from './AccPartnerInfo';
+import AbsenteeInfo from './AbsenteeInfo';
 import {
   getStudentInfo,
   updateStudentInfo,
@@ -185,7 +185,6 @@ class Standups extends Component {
     if (this.props.absenteeWindowOpen) {
       absenteeWindow = (
         <AbsenteeInfo
-          absenteeData={this.props.studentInfo}
           closeWindow={() => this.toggleAbsenteeWindow}
         />
       )
