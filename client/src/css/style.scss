@@ -1022,7 +1022,7 @@ req.body.checkin{
 }
 
 .white-space-reducer {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 #add-part-btn {
@@ -1192,10 +1192,14 @@ th {
 @media screen and (min-width: 769px){
 #page-nav,
 .hamCentering3 {
-  margin-right: 20px;
+  margin-right: 0px;
   // position: sticky;
   top: 0;
   }
+}
+
+.right {
+  padding-right: 40px;
 }
 
 .pad1 {
@@ -1214,7 +1218,7 @@ th {
   text-align: center;
   font-weight: bolder;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: -7px;
   margin-bottom: -20px;
 }
 
@@ -1252,6 +1256,10 @@ th {
     margin-top: -7px;
     margin-right: -1px;
   }
+  
+  .right {
+    padding-right: 0px;
+  }
 
   #page-nav1 label {
     float: right;
@@ -1269,7 +1277,7 @@ th {
     text-align: center;
     font-weight: bolder;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-bottom: -20px;
   }
 
@@ -1415,8 +1423,8 @@ a:hover {
 #lineDecorating1 {
   color: red;
   max-width: 296px;
-  margin-right: 17px;
-  margin-top: 14px;
+  margin-right: 5px;
+  margin-top: 0px;
 }
 
 .up {

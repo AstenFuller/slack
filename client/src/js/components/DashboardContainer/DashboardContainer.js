@@ -231,40 +231,41 @@ class DashboardContainer extends Component {
             <nav id="page-nav">
 
               <label for="hamburger">&#9776;</label>
+              <div className='right'>
               <input type="checkbox" id="hamburger" />
               <br></br>
-
-              <ul className='navigation'>
-                <li className="hamCentering20">
+                <ul className='navigation'>
+                  <li className="hamCentering20">
                     <button>
                       <div
-                  onClick={() => this.showConfirmAbsenteesWindow()}
-                >
-                  Absences
+                        onClick={() => this.showConfirmAbsenteesWindow()}
+                      >
+                        Absences
                   </div>
-                  </button>
-              </li>
-                <li
-                  className="hamCentering20">
+                    </button>
+                  </li>
+                  <li
+                    className="hamCentering20">
                     <button>
                       <div
-                  onClick={() => this.showStudentEditWindow({})}>
-                </div>
-                  Add Student
+                        onClick={() => this.showStudentEditWindow({})}>
+                      </div>
+                      Add Student
                   </button>
-              </li>
-                <li 
-                className='hamCentering20'>
-                  <Link
-                    to={`/admin/login`}
-                    onClick={() => localStorage.removeItem('token')}>
-                    Logout
+                  </li>
+                  <li
+                    className='hamCentering20'>
+                    <Link
+                      to={`/admin/login`}
+                      onClick={() => localStorage.removeItem('token')}>
+                      Logout
               </Link>
-                </li>
-              </ul>
+                  </li>
+                </ul>
+              </div>
             </nav>
-            <hr id='lineDecorating1'></hr>
           </div>
+          {/* <hr id='lineDecorating1'></hr> */}
         </div>
         <div className="container col-sm-12">
           {editStudentWindow}
