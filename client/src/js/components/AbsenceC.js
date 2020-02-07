@@ -15,7 +15,8 @@ class AbsenceC extends Component {
 		this.onSelectChange = this.onSelectChange.bind(this);
 		this.save = this.save.bind(this);
 		this.editAbsence = this.editAbsence.bind(this);
-		this.toggleAbsenteeWindow = this.toggleAbsenteeWindow.bind(this);
+        this.toggleAbsenteeWindow = this.toggleAbsenteeWindow.bind(this);
+        this.toggleMenu = this.toggleMenu.bind(this);
 	}
 
 	absenteeInformation(e) {
@@ -40,7 +41,15 @@ class AbsenceC extends Component {
 	  }
 
 	AbsenteeInfo(props) {
-	  }
+      }
+      
+
+
+      
+
+
+
+
 
 	// function AbsenteeInfo(props) {
 

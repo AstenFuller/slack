@@ -14,7 +14,7 @@ h4 {
 }
 
 h2 {
-  margin-top: 0px;
+  margin-top: 20px;
   margin-bottom: 10px;
 }
 
@@ -471,6 +471,7 @@ header {
 .header-name {
   text-align: center;
   margin-top: 15px;
+  color: #900;
 }
 
 header .date {
@@ -664,7 +665,8 @@ header .date {
   background-size: contain;
   margin-bottom: -46px;
   max-width: 50px;
-  margin-top: 0;
+  margin-top: 19px;
+  margin-left: 40px;
   position: relative;
   z-index: 1;
 }
@@ -732,6 +734,7 @@ name-margin {
 .navigation {
   list-style-type: none;
   flex-direction: row-reverse;
+  text-align: right;
 }
 
 .pointer {
@@ -951,7 +954,7 @@ req.body.checkin{
   background-image: linear-gradient(#d3d3d3,#f5f5f5);
   border: 1.3px solid maroon;
   float: right;
-  margin-top: 10px;
+  margin-top: 30px;
   margin-right: 20px;
 }
 
@@ -1020,7 +1023,7 @@ req.body.checkin{
 }
 
 .white-space-reducer {
-  margin-bottom: -37px;
+  margin-bottom: -15px;
 }
 
 #add-part-btn {
@@ -1185,4 +1188,140 @@ th {
 
 .x::after {
   transform: rotate(-45deg);
+}
+
+@media screen and (min-width: 769px){
+#page-nav,
+.hamCentering3 {
+  margin-right: 20px;
+  position: sticky;
+  top: 0;
+  }
+}
+
+#page-nav label, #hamburger {
+  display: none;
+}
+
+#page-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; 
+}
+
+#page-nav ul li {
+  display: inline-block;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#page-nav ul li a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px){
+  #page-nav label {
+    float: right;
+    display: inline-block;
+    color: #fff;
+    background: #a02620;
+    font-style: normal;
+    font-size: 1.2em;
+    padding: 12px;
+    margin-top: -26px;
+    margin-right: -1px;
+  }
+
+  #page-nav ul li {
+    display: block;
+  }
+  #page-nav ul li {
+    border-top: 1px solid #333;
+  }
+
+  #page-nav ul {
+    display: none;
+  }
+  #page-nav input:checked ~ ul {
+    display: block;
+
+  }
+  hr {
+    display: none;
+    }
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: arial, sans-serif;
+}
+
+.hamCentering {
+  text-align: center;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.hamCentering1 {
+  text-align: center;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.hamCentering2 {
+  text-align: center;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.hamCentering3 {
+  text-align: center;
+  font-weight: bolder;
+  background: green($color: #8d2c2c);
+  text-decoration-color: black;
+  cursor: pointer;
+}
+
+.hamCentering:hover {
+  color: rgb(161, 161, 161);
+}
+
+.hamCentering1:hover {
+  color: rgb(161, 161, 161);
+}
+
+.hamCentering2:hover {
+  color: rgb(161, 161, 161);
+}
+
+.hamCentering3:hover {
+  text-align: center;
+  font-weight: bolder;
+  background: green($color: #8d2c2c);
+  color: rgb(161, 161, 161);
+  cursor: pointer;
+}
+
+a {
+  color: #900;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(161, 161, 161);
+  text-decoration: none;
+}
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+  margin-top: 15px;
+}
+
+#lineDecorating {
+  color: red;
+  max-width: 331px;
+  margin-right: 36px;
+  margin-top: 0px;
 }
