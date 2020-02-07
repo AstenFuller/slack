@@ -191,7 +191,6 @@ class Standups extends Component {
         />
       )
     }
-    console.log(this.props.absenteeWindowOpen)
 
     let keyMetrics = [];
     let keyClassMetrics = [];
