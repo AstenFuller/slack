@@ -55,7 +55,7 @@ class AbsenteeInfo extends React.Component {
 			  this.props.auth_token,
 			   this.props.studentInfo.slack_id,
 			    this.props.currentDate))
-		setTimeout( ()  => console.log(this.props.studentAbsences), 3000)
+		setTimeout( ()  => console.log(this.props.studentAbsences), 5000)
 	}
 
 	render() {
