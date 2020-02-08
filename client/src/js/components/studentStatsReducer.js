@@ -93,10 +93,16 @@ export default function studentStatsReducer(state = defaultState, action) {
       }
     }
     case "UPDATES_ABSENT_STUDENTS_FULFILLED": {
-      console.log(payload)
+      console.log(payload + 'HEREIAM')
       return {
           ...state,
           studentAbsences: payload
+      }
+    }
+    case "PUT_ABSENCE_FULFILLED": {
+      console.log(payload)
+      return {
+        ...state
       }
     }
     default: {

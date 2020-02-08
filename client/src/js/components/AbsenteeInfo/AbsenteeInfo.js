@@ -49,7 +49,12 @@ class AbsenteeInfo extends React.Component {
 		console.log(this.props.studentAbsences);
 		const { dispatch } = this.props;
 		dispatch(toggleEditWindow(!this.props.toggleWindow));
-		updateAbsence(this.props.currentId, this.props.notes, this.props.excused, this.props.auth_token, this.props.studentInfo.slack_id, this.props.currentDate)
+		dispatch(updateAbsence(this.props.currentId
+			, this.props.notes,
+			 this.props.excused,
+			  this.props.auth_token,
+			   this.props.studentInfo.slack_id,
+			    this.props.currentDate))
 		setTimeout( ()  => console.log(this.props.studentAbsences), 3000)
 	}
 
@@ -66,7 +71,7 @@ class AbsenteeInfo extends React.Component {
 					
 					<hr className='linePad'/>
 					<p className='namePad'><strong>Date of Absences</strong></p>
-					{!this.props.toggleWindow ? 
+					{!this.props.toggleWindow && this.props.studentAbsences ?
 					this.props.studentAbsences.map((student, i) => 
 					<AbsenteeItem
 					data={student}
