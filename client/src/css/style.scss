@@ -826,8 +826,7 @@ req.body.checkin{
 
 .student-links {
   padding: 0.5em 0;
-  list-style-type: none;
-  padding-right: 50px;
+  list-style-type: none
 }
 
 .shifting {
@@ -888,6 +887,7 @@ req.body.checkin{
   display: block;
   float: left;
   padding: 0.5em;
+  margin-top: -2px;
 }
 
 .standup-container {
