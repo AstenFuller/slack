@@ -34,19 +34,3 @@ export function toggleExcused(excused) {
         payload: excused,
     }
 }
-
-export function updateAbsence(id, notes, excused, authToken, slack_id, date) {
-        fetch(`/api/absences?access_token=${authToken}`, {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                slack_id: slack_id,
-                date: date,
-                excused: excused,
-                notes: notes,
-                id: id
-            })
-          })
-}

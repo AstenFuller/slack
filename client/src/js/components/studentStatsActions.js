@@ -146,3 +146,37 @@ export function toggleAccWindow1(isOpen) {
     });
   };
 }
+
+export function updateAbsence(id, notes, excused, authToken, slack_id, date) {
+  const userFilter = JSON.stringify({
+    where: {
+      slack_id: slack_id
+    }
+  });
+    fetch(`/api/absences?access_token=${authToken}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            slack_id: slack_id,
+            date: date,
+            excused: excused,
+            notes: notes,
+            id: id
+        })
+        })
+        .then(() => {
+          return dispatch => {
+          dispatch({
+            type: 'UPDATES_ABSENT_STUDENTS',
+            payload: fetch(`/api/absences?access_token=${authToken}&filter=${userFilter}`)
+            .then(res => res.json())
+            .then(data => data)
+            .then(() => console.log('hit'))
+          })
+        }
+        }
+        )
+
+}

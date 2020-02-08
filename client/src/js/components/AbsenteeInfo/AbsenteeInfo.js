@@ -5,9 +5,10 @@ import {
 	getDate,
 	getNotes,
 	toggleExcused,
-	updateAbsence,
 	} from './absenteeActions';
-import AbsenteeEdit from './AbsenteeEdit'
+import { updateAbsence } from '../studentStatsActions';
+import AbsenteeEdit from './AbsenteeEdit';
+import AbsenteeItem from './AbsenteeItem';
 
 
 class AbsenteeInfo extends React.Component {
@@ -22,12 +23,10 @@ class AbsenteeInfo extends React.Component {
 	}
 
 	openEditWindow(e) {
-		console.log(e.target.dateObj)
 		const { dispatch } = this.props;
-		const currentDate = e.target.dateObj;
-		const studentId = e.target.id;
-		dispatch(getDate(currentDate));
-		dispatch(getId(studentId));
+		const data = e.data
+		dispatch(getDate(data.date));
+		dispatch(getId(data.id));
 		dispatch(toggleEditWindow(!this.props.toggleWindow));
 	}
 
@@ -47,13 +46,15 @@ class AbsenteeInfo extends React.Component {
 	}
 
 	handleSave() {
-		// console.log(this.props.studentAbsences)
+		console.log(this.props.studentAbsences);
 		const { dispatch } = this.props;
-		dispatch(toggleEditWindow(!this.props.toggleWindow))
+		dispatch(toggleEditWindow(!this.props.toggleWindow));
 		updateAbsence(this.props.currentId, this.props.notes, this.props.excused, this.props.auth_token, this.props.studentInfo.slack_id, this.props.currentDate)
+		setTimeout( ()  => console.log(this.props.studentAbsences), 3000)
 	}
 
 	render() {
+		
 		return (
 			<div className='acc-partner-window'>
 				<div className='acc-partner-container'>
@@ -65,18 +66,13 @@ class AbsenteeInfo extends React.Component {
 					
 					<hr className='linePad'/>
 					<p className='namePad'><strong>Date of Absences</strong></p>
-					{this.props.studentAbsences.map((s, i) => {
-						console.log(s.date)
-					})}
 					{!this.props.toggleWindow ? 
 					this.props.studentAbsences.map((student, i) => 
-					<a 
-					onClick={this.openEditWindow}
-					id={student.id}
-					dateObj={student.date}
+					<AbsenteeItem
+					data={student}
+					handleOnClick={this.openEditWindow}
 					key={i}
-					>{student.date}
-					</a>)
+					/>)
 					:
 					<AbsenteeEdit 
 					id={this.props.currentId} 

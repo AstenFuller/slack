@@ -92,6 +92,13 @@ export default function studentStatsReducer(state = defaultState, action) {
         absenteeWindowOpen: payload,
       }
     }
+    case "UPDATES_ABSENT_STUDENTS_FULFILLED": {
+      console.log(payload)
+      return {
+          ...state,
+          studentAbsences: payload
+      }
+    }
     default: {
       return state;
     }
