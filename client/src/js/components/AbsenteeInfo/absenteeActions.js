@@ -20,3 +20,17 @@ export function getDate(date) {
         payload: date,
     }
 }
+
+export function getNotes(notes) {
+    return {
+        type: "GET_NOTES",
+        payload: notes,
+    }
+}
+
+export function toggleExcused(excused) {
+    return {
+        type: "GET_EXCUSED",
+        payload: excused,
+    }
+}

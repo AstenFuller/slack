@@ -2,6 +2,8 @@ const defaultState = {
     toggleWindow: false,
     currentId: '',
     currentDate: '',
+    notes: '',
+    excused: false,
   };
   
 export default function absenteeInfo (state = defaultState, action) {
@@ -23,6 +25,18 @@ export default function absenteeInfo (state = defaultState, action) {
           return {
               ...state,
               currentDate: payload
+          }
+      }
+      case "GET_NOTES": {
+          return {
+              ...state,
+              notes: payload
+          }
+      }
+      case "GET_EXCUSED": {
+          return {
+              ...state,
+              excused: payload
           }
       }
       default: {

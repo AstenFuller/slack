@@ -21,6 +21,7 @@ import {
 } from './studentStatsActions';
 import StudentStatsDownload from './StudentStatsDownload';
 import DailyCodingIndicator from './DailyIndicators/DailyCodingIndicator';
+import AbsenteeEdit from './AbsenteeInfo/AbsenteeEdit';
 
 class Standups extends Component {
   constructor(props) {

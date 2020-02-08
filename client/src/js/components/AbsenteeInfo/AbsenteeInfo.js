@@ -1,11 +1,11 @@
 import React from 'react';
-import AppAbsenceC from '../AppAbsenceC';
 import {
 	toggleEditWindow, 
 	getId,
 	getDate,
+	getNotes,
+	toggleExcused,
 	} from './absenteeActions';
-import { relativeTimeThreshold } from 'moment';
 import AbsenteeEdit from './AbsenteeEdit'
 
 
@@ -14,6 +14,8 @@ class AbsenteeInfo extends React.Component {
 		super(props);
 		this.openEditWindow = this.openEditWindow.bind(this);
 		this.closeEditWindow = this.closeEditWindow.bind(this);
+		this.handleEditNotes = this.handleEditNotes.bind(this);
+		this.handleExcusedValue = this.handleExcusedValue.bind(this);
 	}
 
 	openEditWindow(e) {
@@ -28,6 +30,16 @@ class AbsenteeInfo extends React.Component {
 	closeEditWindow() {
 		const { dispatch } = this.props;
 		dispatch(toggleEditWindow(!this.props.toggleWindow));
+	}
+
+	handleEditNotes(notes) {
+		const { dispatch } = this.props;
+		dispatch(getNotes(notes));
+	}
+
+	handleExcusedValue(excused) {
+		const { dispatch } = this.props;
+		dispatch(toggleExcused(excused));
 	}
 
 	render() {
@@ -56,6 +68,10 @@ class AbsenteeInfo extends React.Component {
 					id={this.props.currentId} 
 					date={this.props.currentDate}
 					closeEditWindow={() => this.closeEditWindow}
+					notes={this.props.notes}
+					handleEditNotes={this.handleEditNotes}
+					excused={this.props.excused}
+					handleExcusedValue={this.handleExcusedValue}
 					/>}
 				<br />
 				<div className='acc-partner-row'>

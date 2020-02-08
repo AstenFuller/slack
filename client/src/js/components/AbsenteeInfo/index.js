@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 import AbsenteeInfo from './AbsenteeInfo';
+import AbsenteeEdit from './AbsenteeEdit';
+
 
 function mapStoreToProps(store) {
     return {
@@ -8,6 +10,8 @@ function mapStoreToProps(store) {
         toggleWindow: store.absenteeInfo.toggleWindow,
         currentId: store.absenteeInfo.currentId,
         currentDate: store.absenteeInfo.currentDate,
+        notes: store.absenteeInfo.notes,
+        excused: store.absenteeInfo.excused
     };
 }
 
