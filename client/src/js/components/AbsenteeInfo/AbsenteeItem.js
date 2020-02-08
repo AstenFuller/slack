@@ -15,7 +15,7 @@ export default class AbsenteeItem extends React.Component {
     
     return (
         <div>
-            <button onClick={this.handleClick}></button>
+            <a onClick={this.handleClick}>{this.props.data.date.slice(0,10)}</a>
         </div>
     )
     }
