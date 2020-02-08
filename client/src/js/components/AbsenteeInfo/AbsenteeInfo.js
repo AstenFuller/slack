@@ -5,6 +5,7 @@ import {
 	getDate,
 	getNotes,
 	toggleExcused,
+	updateAbsence,
 	} from './absenteeActions';
 import AbsenteeEdit from './AbsenteeEdit'
 
@@ -12,10 +13,12 @@ import AbsenteeEdit from './AbsenteeEdit'
 class AbsenteeInfo extends React.Component {
 	constructor(props){
 		super(props);
+
 		this.openEditWindow = this.openEditWindow.bind(this);
 		this.closeEditWindow = this.closeEditWindow.bind(this);
 		this.handleEditNotes = this.handleEditNotes.bind(this);
 		this.handleExcusedValue = this.handleExcusedValue.bind(this);
+		this.handleSave = this.handleSave.bind(this);
 	}
 
 	openEditWindow(e) {
@@ -42,8 +45,14 @@ class AbsenteeInfo extends React.Component {
 		dispatch(toggleExcused(excused));
 	}
 
-	render() {
+	handleSave() {
+		console.log(this.props)
+		const { dispatch } = this.props;
+		dispatch(toggleEditWindow(!this.props.toggleWindow))
+		updateAbsence(this.props.currentId, this.props.notes, this.props.excused, this.props.auth_token, this.props.studentInfo.slack_id, this.props.currentDate)
+	}
 
+	render() {
 		return (
 			<div className='acc-partner-window'>
 				<div className='acc-partner-container'>
@@ -61,7 +70,7 @@ class AbsenteeInfo extends React.Component {
 					onClick={this.openEditWindow} 
 					id={student.id} 
 					key={i} 
-					>{student.date.slice(0,10)} 
+					>{student.date.slice(0,10)}: {student.excused.toString()} 
 					</a>)
 					:
 					<AbsenteeEdit 
@@ -72,6 +81,7 @@ class AbsenteeInfo extends React.Component {
 					handleEditNotes={this.handleEditNotes}
 					excused={this.props.excused}
 					handleExcusedValue={this.handleExcusedValue}
+					handleSave={this.handleSave}
 					/>}
 				<br />
 				<div className='acc-partner-row'>

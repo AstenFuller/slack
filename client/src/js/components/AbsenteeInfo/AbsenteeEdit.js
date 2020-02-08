@@ -5,6 +5,7 @@ class AbsenteeEdit extends React.Component {
         super(props);
         this.handleNotes = this.handleNotes.bind(this);
         this.handleExcused = this.handleExcused.bind(this);
+        this.handleSave = this.handleSave.bind(this);
     }
 
     handleNotes(e) {
@@ -14,8 +15,12 @@ class AbsenteeEdit extends React.Component {
     handleExcused(e) {
         this.props.handleExcusedValue(e.target.value);
     }
+
+    handleSave() {
+        this.props.handleSave();
+    }
+
     render() {
-        console.log(this.props)
         return (
             <React.Fragment>
                 <div> 
@@ -27,7 +32,7 @@ class AbsenteeEdit extends React.Component {
                         </select>
                     </div>
                     <br />
-                    <button className='' onClick={this.props.closeEditWindow()}>Save</button>
+                    <button className=''  onClick={this.handleSave} >Save</button>
                 </div>
             </React.Fragment>
         );

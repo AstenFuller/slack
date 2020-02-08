@@ -189,6 +189,7 @@ class Standups extends Component {
       absenteeWindow = (
         <AbsenteeInfo
           closeWindow={() => this.toggleAbsenteeWindow}
+          auth_token={localStorage.getItem('token')}
         />
       )
     }
