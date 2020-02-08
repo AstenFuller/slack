@@ -22,8 +22,9 @@ class AbsenteeInfo extends React.Component {
 	}
 
 	openEditWindow(e) {
+		console.log(e.target.dateObj)
 		const { dispatch } = this.props;
-		const currentDate = e.target.innerHTML;
+		const currentDate = e.target.dateObj;
 		const studentId = e.target.id;
 		dispatch(getDate(currentDate));
 		dispatch(getId(studentId));
@@ -46,7 +47,7 @@ class AbsenteeInfo extends React.Component {
 	}
 
 	handleSave() {
-		console.log(this.props)
+		// console.log(this.props.studentAbsences)
 		const { dispatch } = this.props;
 		dispatch(toggleEditWindow(!this.props.toggleWindow))
 		updateAbsence(this.props.currentId, this.props.notes, this.props.excused, this.props.auth_token, this.props.studentInfo.slack_id, this.props.currentDate)
@@ -64,13 +65,17 @@ class AbsenteeInfo extends React.Component {
 					
 					<hr className='linePad'/>
 					<p className='namePad'><strong>Date of Absences</strong></p>
+					{this.props.studentAbsences.map((s, i) => {
+						console.log(s.date)
+					})}
 					{!this.props.toggleWindow ? 
 					this.props.studentAbsences.map((student, i) => 
 					<a 
-					onClick={this.openEditWindow} 
-					id={student.id} 
-					key={i} 
-					>{student.date.slice(0,10)}: {student.excused.toString()} 
+					onClick={this.openEditWindow}
+					id={student.id}
+					dateObj={student.date}
+					key={i}
+					>{student.date}
 					</a>)
 					:
 					<AbsenteeEdit 

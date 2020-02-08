@@ -21,6 +21,7 @@ class AbsenteeEdit extends React.Component {
     }
 
     render() {
+        // console.log(this.prop)
         return (
             <React.Fragment>
                 <div> 
