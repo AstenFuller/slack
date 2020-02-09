@@ -5,6 +5,7 @@ import {
 	getDate,
 	getNotes,
 	toggleExcused,
+	getData,
 	} from './absenteeActions';
 import { updateAbsence } from '../studentStatsActions';
 import AbsenteeEdit from './AbsenteeEdit';
@@ -28,6 +29,7 @@ class AbsenteeInfo extends React.Component {
 		dispatch(getDate(data.date));
 		dispatch(getId(data.id));
 		dispatch(toggleEditWindow(!this.props.toggleWindow));
+		dispatch(getData(data));
 	}
 
 	closeEditWindow() {
@@ -46,7 +48,7 @@ class AbsenteeInfo extends React.Component {
 	}
 
 	handleSave() {
-		console.log(this.props.studentAbsences);
+
 		const { dispatch } = this.props;
 		dispatch(toggleEditWindow(!this.props.toggleWindow));
 		dispatch(updateAbsence(this.props.currentId
@@ -54,8 +56,8 @@ class AbsenteeInfo extends React.Component {
 			 this.props.excused,
 			  this.props.auth_token,
 			   this.props.studentInfo.slack_id,
-			    this.props.currentDate))
-		setTimeout( ()  => console.log(this.props.studentAbsences), 5000)
+				this.props.currentDate))
+				dispatch(getNotes(''))
 	}
 
 	render() {
@@ -83,15 +85,17 @@ class AbsenteeInfo extends React.Component {
 					id={this.props.currentId} 
 					date={this.props.currentDate}
 					closeEditWindow={() => this.closeEditWindow}
-					notes={this.props.notes}
+					notes={this.props.studentData.notes}
 					handleEditNotes={this.handleEditNotes}
 					excused={this.props.excused}
 					handleExcusedValue={this.handleExcusedValue}
 					handleSave={this.handleSave}
+					data={this.props.studentData}
 					/>}
 				<br />
 				<div className='acc-partner-row'>
-					<button className='return-btn' onClick={!this.props.toggleWindow ? this.props.closeWindow() : this.closeEditWindow}>Return</button>
+					<button className='return-btn' onClick={!this.props.toggleWindow ?
+						 this.props.closeWindow() : this.closeEditWindow}>Return</button>
 				</div>
 				<br />
 				</div>

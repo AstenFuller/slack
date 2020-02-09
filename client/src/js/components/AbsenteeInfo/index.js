@@ -11,7 +11,8 @@ function mapStoreToProps(store) {
         currentId: store.absenteeInfo.currentId,
         currentDate: store.absenteeInfo.currentDate,
         notes: store.absenteeInfo.notes,
-        excused: store.absenteeInfo.excused
+        excused: store.absenteeInfo.excused,
+        studentData: store.absenteeInfo.studentData,
     };
 }
 

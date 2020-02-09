@@ -4,6 +4,7 @@ const defaultState = {
     currentDate: '',
     notes: '',
     excused: false,
+    studentData: '',
   };
   
 export default function absenteeInfo (state = defaultState, action) {
@@ -37,6 +38,13 @@ export default function absenteeInfo (state = defaultState, action) {
           return {
               ...state,
               excused: payload
+          }
+      }
+
+      case "GET_DATA": {
+          return {
+              ...state,
+              studentData: payload
           }
       }
       default: {
