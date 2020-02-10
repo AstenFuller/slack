@@ -269,29 +269,30 @@ class DashboardContainer extends Component {
                 <br></br>
                 <ul className='navigation'>
                   <li className="hamCentering20">
-                    <button>
-                      <div onClick={() => this.showSlackBlast()}>Slack Blast</div>
-                    </button>
+                      <div 
+                        className="dashboard-other-buttons"
+                        onClick={() => this.showSlackBlast()}>
+                        Slack Blast
+                      </div>
                   </li>
                   <li className="hamCentering20">
-                    <button>
                       <div
+                        className="dashboard-other-buttons"
                         onClick={() => this.showConfirmAbsenteesWindow()}>
                         Absences
                       </div>
-                    </button>
                   </li>
                   <li className="hamCentering20">
-                    <button>
                       <div
+                        className="dashboard-add-student"
                         onClick={() => this.showStudentEditWindow({})}>
                         Add Student
                       </div>
-                    </button>
                   </li>
                   <li className='hamCentering20'>
                     <Link
                       to={`/admin/login`}
+                      className="dashboard-other-buttons"
                       onClick={() => localStorage.removeItem('token')}>
                       Logout
                     </Link>

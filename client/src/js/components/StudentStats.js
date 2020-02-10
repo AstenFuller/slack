@@ -182,8 +182,7 @@ class Standups extends Component {
     }
 
     let absenteeWindow = null;
-    if (this.props.absenteeWindowOpen) {
-     
+    if (this.props.absenteeWindowOpen) {  
       absenteeWindow = (
         <AbsenteeInfo
           closeWindow={() => this.toggleAbsenteeWindow}

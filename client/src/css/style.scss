@@ -97,7 +97,6 @@ h2 {
 	justify-content: center;
   align-items: center;
   margin-top: 1%;
-  position: relative;
 }
 
 .acc-partner-window {
@@ -111,7 +110,6 @@ h2 {
 	justify-content: center;
   align-items: center;
   margin-top: 1%;
-  position: relative;
 }
 
 .add-edit-student-container {
@@ -1369,10 +1367,6 @@ th {
     display: block;
   }
 
-  #page-nav ul li {
-    border-top: 1px solid #333;
-  }
-
   #page-nav ul {
     display: none;
   }
@@ -1408,7 +1402,7 @@ th {
 }
 
 html, body {
-  padding: 0;
+  padding: 0 1em;
   margin: 0;
   font-family: arial, sans-serif;
 }
@@ -1515,4 +1509,52 @@ a:hover {
 
 a {
   cursor: pointer;
+}
+
+.dashboard-add-student {
+  max-width: 115px;
+  margin: auto;
+  background: #990000;
+  color: #ffffff;
+  border-radius: .25em;
+  cursor: pointer;
+  padding: 3px 5px;
+  border: solid 1px black;
+}
+
+.dashboard-other-buttons {
+  max-width: 115px;
+  margin: auto;
+  background: #D3D3D3;
+  color: black;
+  border-radius: .25em;
+  cursor: pointer;
+  padding: 3px 5px;
+  border: solid 1px #900;
+}
+
+.student-stats-edit-student {
+  max-width: 115px;
+  margin: auto;
+  background: #990000;
+  color: #ffffff;
+  border-radius: .25em;
+  cursor: pointer;
+  padding: 3px 5px;
+  border: solid 1px black;
+}
+
+.student-stats-other-buttons {
+  max-width: 115px;
+  margin: auto;
+  background: #D3D3D3;
+  color: black;
+  border-radius: .25em;
+  cursor: pointer;
+  padding: 3px 5px;
+  border: solid 1px #900;
+}
+
+.dashboard-add-student:hover {
+
 }
