@@ -1,19 +1,19 @@
 import React from 'react';
 import {
-	toggleEditWindow, 
+	toggleEditWindow,
 	getId,
 	getDate,
 	getNotes,
 	toggleExcused,
 	getData,
-	} from './absenteeActions';
+} from './absenteeActions';
 import { updateAbsence } from '../studentStatsActions';
 import AbsenteeEdit from './AbsenteeEdit';
 import AbsenteeItem from './AbsenteeItem';
 
 
 class AbsenteeInfo extends React.Component {
-	constructor(props){
+	constructor(props) {
 		super(props);
 
 		this.openEditWindow = this.openEditWindow.bind(this);
@@ -30,6 +30,7 @@ class AbsenteeInfo extends React.Component {
 		dispatch(getId(data.id));
 		dispatch(toggleEditWindow(!this.props.toggleWindow));
 		dispatch(getData(data));
+		dispatch(getNotes(data.notes));
 	}
 
 	closeEditWindow() {
@@ -48,20 +49,18 @@ class AbsenteeInfo extends React.Component {
 	}
 
 	handleSave() {
-
 		const { dispatch } = this.props;
 		dispatch(toggleEditWindow(!this.props.toggleWindow));
 		dispatch(updateAbsence(this.props.currentId
 			, this.props.notes,
-			 this.props.excused,
-			  this.props.auth_token,
-			   this.props.studentInfo.slack_id,
-				this.props.currentDate))
-				dispatch(getNotes(''))
+			this.props.excused,
+			this.props.auth_token,
+			this.props.studentInfo.slack_id,
+			this.props.currentDate))
+		dispatch(getNotes(''))
 	}
 
 	render() {
-		
 		return (
 			<div className='acc-partner-window'>
 				<div className='acc-partner-container'>
@@ -70,34 +69,31 @@ class AbsenteeInfo extends React.Component {
 						<p><strong>Name</strong></p>
 						<p>{this.props.studentInfo.name}</p>
 					</div>
-					
-					<hr className='linePad'/>
+					<hr className='linePad' />
 					<p className='namePad'><strong>Date of Absences</strong></p>
 					{!this.props.toggleWindow && this.props.studentAbsences ?
-					this.props.studentAbsences.map((student, i) => 
-					<AbsenteeItem
-					data={student}
-					handleOnClick={this.openEditWindow}
-					key={i}
-					/>)
-					:
-					<AbsenteeEdit 
-					id={this.props.currentId} 
-					date={this.props.currentDate}
-					closeEditWindow={() => this.closeEditWindow}
-					notes={this.props.studentData.notes}
-					handleEditNotes={this.handleEditNotes}
-					excused={this.props.excused}
-					handleExcusedValue={this.handleExcusedValue}
-					handleSave={this.handleSave}
-					data={this.props.studentData}
-					/>}
-				<br />
-				<div className='acc-partner-row'>
-					<button className='return-btn' onClick={!this.props.toggleWindow ?
-						 this.props.closeWindow() : this.closeEditWindow}>Return</button>
-				</div>
-				<br />
+						this.props.studentAbsences.map((student, i) =>
+							<AbsenteeItem
+								data={student}
+								handleOnClick={this.openEditWindow}
+								key={i}
+							/>)
+						:
+						<AbsenteeEdit
+							closeEditWindow={() => this.closeEditWindow}
+							notes={this.props.notes}
+							handleEditNotes={this.handleEditNotes}
+							excused={this.props.excused}
+							handleExcusedValue={this.handleExcusedValue}
+							handleSave={this.handleSave}
+							data={this.props.studentData}
+						/>}
+					<br />
+					<div className='acc-partner-row'>
+						<button className='return-btn' onClick={!this.props.toggleWindow ?
+							this.props.closeWindow() : this.closeEditWindow}>Return</button>
+					</div>
+					<br />
 				</div>
 			</div>
 		)

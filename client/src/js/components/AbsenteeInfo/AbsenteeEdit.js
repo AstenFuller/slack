@@ -9,7 +9,7 @@ class AbsenteeEdit extends React.Component {
     }
 
     handleNotes(e) {
-        this.props.handleEditNotes(e.target.defaultValue);
+        this.props.handleEditNotes(e.target.value);
     }
 
     handleExcused(e) {
@@ -25,7 +25,7 @@ class AbsenteeEdit extends React.Component {
         return (
             <React.Fragment>
                 <div> 
-                    <textarea onChange={this.handleNotes} defaultValue={this.props.data.notes}></textarea>
+                    <textarea onChange={this.handleNotes} value={this.props.notes}></textarea>
                     <div>
                         <br></br>
                         <select defaultValue='Excused or Not' name='excuseOrNa' onChange={this.handleExcused}>

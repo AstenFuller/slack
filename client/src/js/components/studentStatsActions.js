@@ -154,7 +154,6 @@ export function updateAbsence(id, notes, excused, authToken, slack_id, date) {
     }
   });
   return dispatch => {
-    console.log("Josiah")
     dispatch({
       type: "PUT_ABSENCE",
       payload: fetch(`/api/absences?access_token=${authToken}`, {
