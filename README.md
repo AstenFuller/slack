@@ -11,7 +11,7 @@ This Slack bot allows a student to ring the doorbell to alert the staff to open 
 -[Google Authorization](#auth-google)<br/>
 -[Google Setup](#setup-google)<br/>
 -[Cypress Testing](#cypress)<br/>
--[How to set a Cronjob](#cronjob)<br/>
+-[Slack Blast - Cronjob](#cronjob)<br/>
 
 <a name="setup">
 
@@ -285,11 +285,16 @@ Then: `$ npm run cypress` to run the test.
 
 <a name="cronjob">
 
-## Set a Cronjob
+## Cronjob Slack Blast
 
 A cron job runs every 5 minutes and will send the first object returned with a timestamp from that moment to 4:59 sec into the future. Cronjob runs a job check every 5 minutes.
-Too add a job open api/explorer and in the challenges model do a post.
-Add the message and url you would like to send.
-Add the time you would like this message to be executed in local military time.
+1. Too add a job open api/explorer and in the challenges model do a post.
+    - Add the message and url you would like to send.
+    - Add the time you would like this message to be executed in local military time.
+2. Another way to send a slack blast through the admin dash board Slack Blast Button. Just fill in the fields.
+
+For the Slack Bot to know which channel to post into we used a webhook from the slack api. A slack webhook is generated from the slack app website. Generate one then copy and paste it into your .env file
+
+`SLACK_CRON_HOOK=TSV3B6203/BTSPBQ9PH/28FBNyFjtlXCwainZ6fn5dWG`
 
 :copyright: 2019 San Diego Code School

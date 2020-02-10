@@ -179,6 +179,33 @@ h2 {
 	align-content: center;
 }
 
+.slack-blast-row {
+  width: 300px;
+	height: 60px;
+	box-sizing: border-box;
+	margin: 5px 10px;
+	padding: 5px 5px 0px 5px;
+  display: flex;
+  flex-direction: column;
+	justify-content: space-around;
+	align-content: center;
+}
+
+.slack-blast-row-textarea {
+  width: 300px;
+	height: 100px;
+	box-sizing: border-box;
+	margin: 5px 10px;
+	padding: 5px 5px 0px 5px;
+  display: flex;
+  flex-direction: column;
+	justify-content: space-around;
+  align-content: center;
+  textarea {
+    height: 100px;
+  }
+}
+
 hr {
   border: 0;
   clear: both;

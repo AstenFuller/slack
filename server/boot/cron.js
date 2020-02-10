@@ -14,10 +14,10 @@ module.exports = function(app) {
     function createQueue(d) {
       let result = []
       d.map((chal) => {
-        let challengeTime = parseInt(chal.date.toISOString().replace(/[-,:,a-zA-Z]/ig,'').substring(0, 14));
-        let currentTime = parseInt(moment().format().replace(/[-,:,a-zA-Z]/ig,'').substring(0,14));
-        let cutOffTime = parseInt(moment().format().replace(/[-,:,a-zA-Z]/ig,'').substring(0,14)) + 459;
-        if(challengeTime >= currentTime && challengeTime < cutOffTime) {
+        let challengeTime = parseInt(chal.date.replace(/[-,:,a-zA-Z]/ig,'').substring(0, 12));
+        let currentTime = parseInt(moment().format().replace(/[-,:,a-zA-Z]/ig,'').substring(0,12));
+        let cutOffTime = parseInt(moment().format().replace(/[-,:,a-zA-Z]/ig,'').substring(0,12)) + 459;
+        if(challengeTime >= currentTime && challengeTime <= cutOffTime) {
           result.push(chal)
         }
       })

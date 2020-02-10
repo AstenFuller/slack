@@ -12,8 +12,10 @@ import {
   saveStudentData,
   getStudentData,
   setStudentsBeingViewed,
-  sendAbsences
+  sendAbsences,
+  sendCronJob
 } from "./dashboardActions";
+import SlackChatBlast from "../CronMessage/SlackChatBlast";
 import EditStudent from "../EditStudent";
 
 class DashboardContainer extends Component {
@@ -25,6 +27,7 @@ class DashboardContainer extends Component {
       saveErrorMessage: "",
       display: {},
       showConfirmAbsenteesWindow: false,
+      showSlackBlast: false,
       absenteesErrorMessage: ""
     };
     this.hideStudentEditWindow = this.hideStudentEditWindow.bind(this);
@@ -34,10 +37,13 @@ class DashboardContainer extends Component {
     this.hideConfirmAbsenteesWindow = this.hideConfirmAbsenteesWindow.bind(
       this
     );
+    this.showSlackBlast = this.showSlackBlast.bind(this);
+    this.hideSlackBlast = this.hideSlackBlast.bind(this);
     this.saveAbsentees = this.saveAbsentees.bind(this)
     this.showConfirmAbsenteesWindow = this.showConfirmAbsenteesWindow.bind(
       this
     );
+    this.postCronJob = this.postCronJob.bind(this);
   }
 
   componentDidMount() {
@@ -80,6 +86,24 @@ class DashboardContainer extends Component {
     this.setState({
       showConfirmAbsenteesWindow: true
     });
+  }
+  showSlackBlast() {
+    this.setState({
+      showSlackBlast: true
+    });
+  }
+
+  hideSlackBlast(event, override) {
+    if (event.target === event.currentTarget || override) {
+      this.setState({
+        showSlackBlast: false
+      });
+    }
+  }
+
+  postCronJob(post) {
+    const { dispatch } = this.props;
+    dispatch(sendCronJob(post, localStorage.getItem('token')))
   }
 
   hideConfirmAbsenteesWindow(event, override) {
@@ -217,6 +241,16 @@ class DashboardContainer extends Component {
       );
     }
 
+    let slackBlask = null;
+    if (this.state.showSlackBlast) {
+      slackBlask = (
+        <SlackChatBlast
+          callback={this.postCronJob}
+          closeWindow={() => this.hideSlackBlast}
+        />
+      );
+    }
+
     return (
       <React.Fragment>
         <div className="container col-sm-12 white-space-reducer">
@@ -235,6 +269,13 @@ class DashboardContainer extends Component {
                 <input type="checkbox" id="hamburger" />
                 <br></br>
                 <ul className='navigation'>
+                  <li
+                    className="hamCentering20"
+                  >
+                    <button>
+                      <div onClick={() => this.showSlackBlast()}>Slack Blast</div>
+                      </button>
+                  </li>
                   <li className="hamCentering20">
                     <button>
                       <div
@@ -267,6 +308,7 @@ class DashboardContainer extends Component {
         <div className="container col-sm-12">
           {editStudentWindow}
           {confirmAbsenteesWindow}
+          {slackBlask}
           <div className="row">
             <div className="col-sm-4 student-col-size">
               <div className="card">
