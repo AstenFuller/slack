@@ -49,6 +49,6 @@ module.exports = function(app) {
     }
   },
   {
-    timezone: process.env.TZ ||"America/Tijuana"
+    timezone: process.env.TZ || "America/Tijuana"
   });
 }

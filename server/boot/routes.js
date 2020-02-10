@@ -7,6 +7,14 @@ let students = [];
 let url = process.env.BASE_URL
   ? process.env.BASE_URL
   : "http://localhost:3000/";
+let nCampus = {
+  lat: 33.1244961,
+  lon: -117.0785738,
+};
+let sCampus = {
+  lat: 32.7105475,
+  lon: -117.0514572
+};
 
 var schedule = require("node-schedule");
 
@@ -712,8 +720,8 @@ module.exports = app => {
         const isNearby =
           loc.lat &&
           loc.long &&
-          Math.abs(loc.lat - process.env.NCAMPUSLAT) < 0.0001 &&
-          Math.abs(loc.long - process.env.NCAMPUSLON) < 0.0001;
+          Math.abs(loc.lat - nCampus.lat) < 0.0001 &&
+          Math.abs(loc.long - nCampus.lon) < 0.0001;
 
         app.models.checkin
           .create({
@@ -777,8 +785,8 @@ module.exports = app => {
           const isNearby =
             loc.lat &&
             loc.long &&
-            Math.abs(loc.lat - process.env.NCAMPUSLAT) < 0.0001 &&
-            Math.abs(loc.long - process.env.NCAMPUSLON) < 0.0001;
+            Math.abs(loc.lat - nCampus.lat) < 0.0001 &&
+            Math.abs(loc.long - nCampus.lon) < 0.0001;
           if (penalty === "none" && !isNearby) {
             penalty = "notAtSchool";
           }

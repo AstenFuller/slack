@@ -43,12 +43,6 @@ SLACK_URL= <base url for Slack Workspace>
 # This is your ngrok link make sure it ends with a trailing slash. Needed for testing and developing '/' commands.
 BASE_URL= <ngrok tunnel>
 
-# Used for geo location verification.
-NCAMPUSLAT= 33.1244961
-NCAMPUSLON= -117.0785738
-SCAMPUSLAT= 32.7105475
-SCAMPUSLON= -117.0514572
-
 # Only use these when working with google oauth. Not necessary to access the admin dash.
 GOOGLE_ID=<Required for Google login (authentication)>
 GOOGLE_SECRET=<Required for Google login (authentication)>
@@ -288,12 +282,10 @@ Then: `$ npm run cypress` to run the test.
 ## Cronjob Slack Blast
 
 A cron job runs every 5 minutes and will send the first object returned with a timestamp from that moment to 4:59 sec into the future. Cronjob runs a job check every 5 minutes.
-1. Too add a job open api/explorer and in the challenges model do a post.
-    - Add the message and url you would like to send.
-    - Add the time you would like this message to be executed in local military time.
-2. Another way to send a slack blast through the admin dash board Slack Blast Button. Just fill in the fields.
 
-For the Slack Bot to know which channel to post into we used a webhook from the slack api. A slack webhook is generated from the slack app website. Generate one then copy and paste it into your .env file
+To send a slack blast go to the admin dashboard `Slack Blast` Button. Fill in the fields and hit submit.
+
+For the Slack Bot to know which channel to post to we used a webhook from the slack api. A slack webhook is generated from the slack app website. Generate one then copy and paste it into your .env file
 
 `SLACK_CRON_HOOK=TSV3B6203/BTSPBQ9PH/28FBNyFjtlXCwainZ6fn5dWG`
 
