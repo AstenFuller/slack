@@ -231,27 +231,25 @@ class DashboardContainer extends Component {
             <nav id="page-nav">
 
               <label for="hamburger">&#9776;</label>
-              <div className='right'>
-              <input type="checkbox" id="hamburger" />
-              <br></br>
+              <div className='right1'>
+                <input type="checkbox" id="hamburger" />
+                <br></br>
                 <ul className='navigation'>
                   <li className="hamCentering20">
                     <button>
                       <div
-                        onClick={() => this.showConfirmAbsenteesWindow()}
-                      >
+                        onClick={() => this.showConfirmAbsenteesWindow()}>
                         Absences
                   </div>
                     </button>
                   </li>
-                  <li
-                    className="hamCentering20">
+                  <li className="hamCentering20">
                     <button>
                       <div
                         onClick={() => this.showStudentEditWindow({})}>
+                        Add Student
                       </div>
-                      Add Student
-                  </button>
+                    </button>
                   </li>
                   <li
                     className='hamCentering20'>

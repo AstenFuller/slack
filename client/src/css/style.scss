@@ -574,6 +574,11 @@ header .date {
   text-decoration: none;
 }
 
+button {
+  position: relative;
+  z-index: 3;
+}
+
 .loginBtn {
   box-sizing: border-box;
   position: relative;
@@ -687,6 +692,8 @@ header .date {
   background-size: contain;
   text-align: center;
   margin-top: 1px;
+  position: relative;
+  z-index: 1;
 }
 
 #logo-admin-style > img {
@@ -793,6 +800,8 @@ name-margin {
   max-width: 4px;
   margin-left: 10px;
   margin-bottom: -55px;
+  position: relative;
+  z-index: 1;
 }
 
 
@@ -1198,8 +1207,14 @@ th {
   }
 }
 
+.right1 {
+  padding-right: 40px;
+  margin-top: -2px;
+}
+
 .right {
   padding-right: 40px;
+  margin-top: -1px;
 }
 
 .pad1 {
@@ -1255,8 +1270,25 @@ th {
     padding: 12px;
     margin-top: -7px;
     margin-right: -1px;
+    position: relative;
+    z-index: 2;
   }
-  
+
+  .red-date {
+    color: #900;
+    padding-left: 90px;
+    margin-top: -88px;
+    min-width: 1px;
+    padding-bottom: 28px;
+  }
+
+  .right1 {
+    padding-right: 0px;
+    margin-top: -2px;
+    position: relative;
+    z-index: 1;
+  }
+
   .right {
     padding-right: 0px;
   }
@@ -1368,7 +1400,7 @@ html, body {
   font-weight: bolder;
   background: green($color: #8d2c2c);
   cursor: pointer;
-  margin-top:20px;
+  margin-top:19px;
 }
 
 .hamCentering:hover {
@@ -1384,6 +1416,12 @@ html, body {
 }
 
 .hamCentering2:hover {
+  color: rgb(161, 161, 161);
+  text-align: center;
+  font-weight: bolder;
+}
+
+.hamCentering20:hover {
   color: rgb(161, 161, 161);
   text-align: center;
   font-weight: bolder;
