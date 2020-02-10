@@ -30,7 +30,7 @@ SLACK_CLIENT_ID= <comes from the slack app>
 SLACK_CLIENT_SECRET= <comes from the slack app>
 
 # Found in slack app options. Used only for the cronjob messages from staff.
-SLACK_CRON_HOOK= <slack webhook that allows cronjob to post to slack channel>
+SLACK_CRON_HOOK= <slack webhook that allows cronjob to post to a message to slack channel>
 
 # Used by the slack to choose which channel to send messages.
 STUDENTS_CHANNEL= <current students channel ID>
@@ -286,6 +286,8 @@ A cron job runs every 5 minutes and will send the first object returned with a t
 To send a slack blast go to the admin dashboard `Slack Blast` Button. Fill in the fields and hit submit.
 
 For the Slack Bot to know which channel to post to we used a webhook from the slack api. A slack webhook is generated from the slack app website. Generate one then copy and paste it into your .env file
+
+![slack app website](readme-cron.png)
 
 `SLACK_CRON_HOOK=TSV3B6203/BTSPBQ9PH/28FBNyFjtlXCwainZ6fn5dWG`
 
