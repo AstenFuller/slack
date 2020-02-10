@@ -13,14 +13,16 @@ module.exports = function(app) {
 
     function createQueue(d) {
       let result = []
-      d.map((chal) => {
-        let challengeTime = parseInt(chal.date.replace(/[-,:,a-zA-Z]/ig,'').substring(0, 12));
-        let currentTime = parseInt(moment().format().replace(/[-,:,a-zA-Z]/ig,'').substring(0,12));
-        let cutOffTime = parseInt(moment().format().replace(/[-,:,a-zA-Z]/ig,'').substring(0,12)) + 459;
-        if(challengeTime >= currentTime && challengeTime <= cutOffTime) {
-          result.push(chal)
-        }
-      })
+      if(d.length > 0) {
+        d.map((chal) => {
+          let challengeTime = parseInt(chal.date.replace(/[-,:,a-zA-Z]/ig,'').substring(0, 12));
+          let currentTime = parseInt(moment().format().replace(/[-,:,a-zA-Z]/ig,'').substring(0,12));
+          let cutOffTime = parseInt(moment().format().replace(/[-,:,a-zA-Z]/ig,'').substring(0,12)) + 459;
+          if(challengeTime >= currentTime && challengeTime <= cutOffTime) {
+            result.push(chal)
+          }
+        })
+      }
       return cronJob(result)
     }
 
