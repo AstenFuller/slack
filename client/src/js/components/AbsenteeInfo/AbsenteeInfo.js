@@ -64,7 +64,7 @@ class AbsenteeInfo extends React.Component {
 
 	render() {
 		return (
-			<div className='acc-partner-window'>
+			<div className='acc-partner-window' onClick={this.props.closeWindow()}>
 				<div className='acc-partner-container'>
 					<h3 className='acc-partner-header'>Absentee Info</h3>
 					<div className='acc-partner-row'>
