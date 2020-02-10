@@ -219,38 +219,49 @@ class DashboardContainer extends Component {
 
     return (
       <React.Fragment>
-        <div className="container col-sm-12">
+        <div className="container col-sm-12 white-space-reducer">
           <div className="row">
             <div className="col-sm-2">
-              <div className="card">
-              <div className="red-stripe-1"></div>
+              <div className="card adminDashStyle">
+                <div className="red-stripe-1"></div>
                 <p className="sdcs-logo" id="logo-style"></p>
                 <p className="date red-date">{`${dayOfWeek}, ${month} ${dayOfMonth}`}</p>
               </div>
             </div>
-            <ul className="">
-              <Link
-                className="link-btn1"
-                to={`/admin/login`}
-                onClick={() => localStorage.removeItem('token')}
-              >
-                Logout
+            <nav id="page-nav">
+
+              <label for="hamburger">&#9776;</label>
+              <div className='right1'>
+                <input type="checkbox" id="hamburger" />
+                <br></br>
+                <ul className='navigation'>
+                  <li className="hamCentering20">
+                    <button>
+                      <div
+                        onClick={() => this.showConfirmAbsenteesWindow()}>
+                        Absences
+                  </div>
+                    </button>
+                  </li>
+                  <li className="hamCentering20">
+                    <button>
+                      <div
+                        onClick={() => this.showStudentEditWindow({})}>
+                        Add Student
+                      </div>
+                    </button>
+                  </li>
+                  <li
+                    className='hamCentering20'>
+                    <Link
+                      to={`/admin/login`}
+                      onClick={() => localStorage.removeItem('token')}>
+                      Logout
               </Link>
-              <li
-                className="add-student"
-                id="add-stud-btn"
-                onClick={() => this.showStudentEditWindow({})}
-              >
-                Add Student
-              </li>
-              <li
-                className="confirm-absentees"
-                id="absence-btn"
-                onClick={() => this.showConfirmAbsenteesWindow()}
-              >
-                Absences
-              </li>
-            </ul>
+                  </li>
+                </ul>
+              </div>
+            </nav>
           </div>
         </div>
         <div className="container col-sm-12">
@@ -269,7 +280,7 @@ class DashboardContainer extends Component {
                   <option value={"ALL"}>ALL</option>
                 </select>
                 <div
-                  className="card"
+                  className="card cursor-pointer"
                   onClick={() => this.toggle("view-data-panel")}
                 >
                   <h2>View data for</h2>
@@ -290,7 +301,7 @@ class DashboardContainer extends Component {
             </div>
             <div className="col-sm-4 student-col-size">
               <span
-                className="card"
+                className="card cursor-pointer"
                 onClick={() => this.toggle("standups-panel")}
               >
                 <h2>Standups</h2>
@@ -303,8 +314,8 @@ class DashboardContainer extends Component {
                 }
               >
                 <DataSection
-                  title1 ='Not Completed'
-                  title2 ='Completed'
+                  title1='Not Completed'
+                  title2='Completed'
                   data={standupsData ? standupsData.summary : undefined}
                   studentsList1={
                     standupsData ? standupsData.delinquents : undefined
@@ -318,7 +329,7 @@ class DashboardContainer extends Component {
             </div>
             <div className="col-sm-4 student-col-size">
               <span
-                className="card"
+                className="card cursor-pointer"
                 onClick={() => this.toggle("checkins-panel")}
               >
                 <h2>Checkins</h2>
