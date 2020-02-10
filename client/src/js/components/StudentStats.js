@@ -16,7 +16,7 @@ import {
   updateStudentInfo,
   toggleEditWindow,
   toggleAccWindow,
-  toggleAccWindow1,
+  toggleAbsenceWindow,
 } from './studentStatsActions';
 import StudentStatsDownload from './StudentStatsDownload';
 import DailyCodingIndicator from './DailyIndicators/DailyCodingIndicator';
@@ -56,7 +56,7 @@ class Standups extends Component {
 
   toggleAbsenteeWindow() {
     const { dispatch } = this.props;
-    dispatch(toggleAccWindow1(!this.props.absenteeWindowOpen));
+    dispatch(toggleAbsenceWindow(!this.props.absenteeWindowOpen));
   }
 
   closeEditWindow(event, override) {

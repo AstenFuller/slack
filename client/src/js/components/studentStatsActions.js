@@ -138,7 +138,7 @@ export function toggleAccWindow(isOpen) {
   };
 }
 
-export function toggleAccWindow1(isOpen) {
+export function toggleAbsenceWindow(isOpen) {
   return dispatch => {
     dispatch({
       type: "TOGGLE_ABSENTEE_WINDOW",

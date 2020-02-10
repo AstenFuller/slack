@@ -30,6 +30,7 @@ class AbsenteeInfo extends React.Component {
 		dispatch(toggleEditWindow(!this.props.toggleWindow));
 		dispatch(getData(studentData));
 		dispatch(getNotes(studentData.notes));
+		dispatch(toggleExcused(studentData.excused))
 	}
 
 	closeEditWindow() {
@@ -71,7 +72,7 @@ class AbsenteeInfo extends React.Component {
 						<p>{this.props.studentInfo.name}</p>
 					</div>
 					<hr className='linePad' />
-					<p className='namePad'><strong>Date of Absences</strong></p>
+					<p className='namePad'><strong>{!this.props.toggleWindow ? 'Date of Absences' : 'Date of Absence'}</strong></p>
 					{!this.props.toggleWindow && this.props.studentAbsences ?
 						this.props.studentAbsences.map((student, i) =>
 							<AbsenteeItem

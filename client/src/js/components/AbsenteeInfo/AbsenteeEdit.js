@@ -21,7 +21,6 @@ class AbsenteeEdit extends React.Component {
     }
 
     render() {
-
         return (
             <React.Fragment>
                 <div> 
@@ -29,14 +28,14 @@ class AbsenteeEdit extends React.Component {
                     <textarea onChange={this.handleNotes} value={this.props.notes}></textarea>
                     <div>
                         <br></br>
-                        <select defaultValue='Excused or Not' name='excuseOrNa' onChange={this.handleExcused}>
+                        <select className='edit-button-mobile' defaultValue='Excused or Not' name='excuseOrNa' onChange={this.handleExcused}>
                             <option value={0}>Select</option>
                             <option id='excuseOrNa-2' value={false} >Not Excused</option>
                             <option id='excuseOrNa-1' value={true} >Excused</option>
                         </select>
                     </div>
                     <br />
-                    <button onClick={this.handleSave}>Save</button>
+                    <button className='edit-button-mobile' onClick={this.handleSave}>Save</button>
                 </div>
             </React.Fragment>
         );

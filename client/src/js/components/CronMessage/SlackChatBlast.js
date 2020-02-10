@@ -76,18 +76,18 @@ export default class SlackChatBlast extends React.Component {
           </div>
           <div className='slack-blast-row'>
             <p>Hours</p>
-            <select name='hour' value={this.state.hour} onChange={this.changeHandler}>
+            <select className='edit-button-mobile' name='hour' value={this.state.hour} onChange={this.changeHandler}>
             {hourOptions}
             </select>
           </div>
           <div className='slack-blast-row'>
             <p>Minute</p>
-            <select name='minute' value={this.state.minute} onChange={this.changeHandler}>
+            <select className='edit-button-mobile' name='minute' value={this.state.minute} onChange={this.changeHandler}>
               {minuteOptions}
             </select>
           </div>
           <div className='acc-partner-row'>
-            <button onClick={this.clickHandler}>Submit</button>
+            <button className='edit-button-mobile' onClick={this.clickHandler}>Submit</button>
           </div>
           <div className='acc-partner-row'>
             <button className='return-btn' onClick={this.props.closeWindow()}>Return</button>
