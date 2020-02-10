@@ -11,7 +11,6 @@ import { updateAbsence } from '../studentStatsActions';
 import AbsenteeEdit from './AbsenteeEdit';
 import AbsenteeItem from './AbsenteeItem';
 
-
 class AbsenteeInfo extends React.Component {
 	constructor(props) {
 		super(props);
@@ -91,7 +90,7 @@ class AbsenteeInfo extends React.Component {
 					<br />
 					<div className='acc-partner-row'>
 						<button className='return-btn' onClick={!this.props.toggleWindow ?
-							this.props.closeWindow() : this.closeEditWindow}>Return</button>
+							this.props.closeWindow() : this.closeEditWindow}>{!this.props.toggleWindow ? 'Return' : 'Cancel'}</button>
 					</div>
 					<br />
 				</div>

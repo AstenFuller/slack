@@ -25,6 +25,7 @@ class AbsenteeEdit extends React.Component {
         return (
             <React.Fragment>
                 <div> 
+                    <p>{this.props.data.date.slice(0,10)}</p>
                     <textarea onChange={this.handleNotes} value={this.props.notes}></textarea>
                     <div>
                         <br></br>
