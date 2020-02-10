@@ -22,14 +22,14 @@ class AbsenteeInfo extends React.Component {
 		this.handleSave = this.handleSave.bind(this);
 	}
 
-	openEditWindow(e) {
+	openEditWindow(event) {
 		const { dispatch } = this.props;
-		const data = e.data
-		dispatch(getDate(data.date));
-		dispatch(getId(data.id));
+		const studentData = event.studentData;
+		dispatch(getDate(studentData.date));
+		dispatch(getId(studentData.id));
 		dispatch(toggleEditWindow(!this.props.toggleWindow));
-		dispatch(getData(data));
-		dispatch(getNotes(data.notes));
+		dispatch(getData(studentData));
+		dispatch(getNotes(studentData.notes));
 	}
 
 	closeEditWindow() {
@@ -75,7 +75,7 @@ class AbsenteeInfo extends React.Component {
 					{!this.props.toggleWindow && this.props.studentAbsences ?
 						this.props.studentAbsences.map((student, i) =>
 							<AbsenteeItem
-								data={student}
+								studentData={student}
 								handleOnClick={this.openEditWindow}
 								key={i}
 							/>)
@@ -84,10 +84,9 @@ class AbsenteeInfo extends React.Component {
 							closeEditWindow={() => this.closeEditWindow}
 							notes={this.props.notes}
 							handleEditNotes={this.handleEditNotes}
-							excused={this.props.excused}
 							handleExcusedValue={this.handleExcusedValue}
 							handleSave={this.handleSave}
-							data={this.props.studentData}
+							studentData={this.props.studentData}
 						/>}
 					<br />
 					<div className='acc-partner-row'>

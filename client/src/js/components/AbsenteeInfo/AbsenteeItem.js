@@ -15,8 +15,8 @@ export default class AbsenteeItem extends React.Component {
     
     return (
         <div>
-            <a onClick={this.handleClick}>{this.props.data.date.slice(0,10)}</a>
-            <p>{this.props.data.excused ? ' ' + 'Excused': ' ' + 'Unexcused'}</p>
+            <a onClick={this.handleClick}>{this.props.studentData.date.slice(0,10)}</a>
+            <p>{this.props.studentData.excused ? ' ' + 'Excused': ' ' + 'Unexcused'}</p>
         </div>
     )
     }

@@ -263,25 +263,22 @@ class DashboardContainer extends Component {
               </div>
             </div>
             <nav id="page-nav">
-
               <label for="hamburger">&#9776;</label>
               <div className='right1'>
                 <input type="checkbox" id="hamburger" />
                 <br></br>
                 <ul className='navigation'>
-                  <li
-                    className="hamCentering20"
-                  >
+                  <li className="hamCentering20">
                     <button>
                       <div onClick={() => this.showSlackBlast()}>Slack Blast</div>
-                      </button>
+                    </button>
                   </li>
                   <li className="hamCentering20">
                     <button>
                       <div
                         onClick={() => this.showConfirmAbsenteesWindow()}>
                         Absences
-                  </div>
+                      </div>
                     </button>
                   </li>
                   <li className="hamCentering20">
@@ -292,13 +289,12 @@ class DashboardContainer extends Component {
                       </div>
                     </button>
                   </li>
-                  <li
-                    className='hamCentering20'>
+                  <li className='hamCentering20'>
                     <Link
                       to={`/admin/login`}
                       onClick={() => localStorage.removeItem('token')}>
                       Logout
-              </Link>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -402,7 +398,6 @@ class DashboardContainer extends Component {
               </div>
             </div>
           </div>
-          <div></div>
         </div>
       </React.Fragment>
     );
