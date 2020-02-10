@@ -50,12 +50,14 @@ class AbsenteeInfo extends React.Component {
 	handleSave() {
 		const { dispatch } = this.props;
 		dispatch(toggleEditWindow(!this.props.toggleWindow));
-		dispatch(updateAbsence(this.props.currentId
-			, this.props.notes,
+		dispatch(updateAbsence(
+			this.props.currentId,
+			this.props.notes,
 			this.props.excused,
 			this.props.auth_token,
 			this.props.studentInfo.slack_id,
-			this.props.currentDate))
+			this.props.currentDate
+			))
 		dispatch(getNotes(''))
 	}
 

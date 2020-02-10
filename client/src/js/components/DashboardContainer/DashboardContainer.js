@@ -263,7 +263,6 @@ class DashboardContainer extends Component {
               </div>
             </nav>
           </div>
-          {/* <hr id='lineDecorating1'></hr> */}
         </div>
         <div className="container col-sm-12">
           {editStudentWindow}

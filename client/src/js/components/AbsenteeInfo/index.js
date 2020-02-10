@@ -1,7 +1,5 @@
 import { connect } from 'react-redux';
 import AbsenteeInfo from './AbsenteeInfo';
-import AbsenteeEdit from './AbsenteeEdit';
-
 
 function mapStoreToProps(store) {
     return {

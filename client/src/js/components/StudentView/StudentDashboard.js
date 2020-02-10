@@ -136,7 +136,6 @@ export default function StudentDashboard(props) {
     let otherStandupMetrics = [];
     let otherCodingMetrics = [];
 
-
     if (!!checkinData) {
       otherClassMetrics = checkinData.filter(function (obj) {
         return (obj.footer == "Time in class weekly average") || (obj.footer == "Time in class total hours");

@@ -268,23 +268,14 @@ class Standups extends Component {
           openStudentAccountabilityPartnerInfo={() => this.toggleAccPartnerWindow}
           openStudentAbsenteeInfo={() => this.toggleAbsenteeWindow}
           auth_token={localStorage.getItem('token')}
-
         />
         {editStudentWindow}
         {accPartnerWindow}
         {absenteeWindow}
 
         <div className="header-name">
-
           <h4>{this.props.studentInfo.name}</h4>
-
-
         </div>
-
-
-
-
-
         <main className="wrapper">
           <div className="data-section-container-grid">
             <DataSectionForStudentStats
