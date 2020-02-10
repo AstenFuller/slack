@@ -1419,8 +1419,6 @@ html, body {
   cursor: pointer;
 }
 
-
-
 .hamCentering3 {
   text-align: center;
   font-weight: bolder;
@@ -1429,45 +1427,13 @@ html, body {
   margin-top:19px;
 }
 
-.hamCentering:hover {
-  color: rgb(161, 161, 161);
-  text-align: center;
-  font-weight: bolder;
-}
-
-.hamCentering1:hover {
-  color: rgb(161, 161, 161);
-  text-align: center;
-  font-weight: bolder;
-}
-
-.hamCentering2:hover {
-  color: rgb(161, 161, 161);
-  text-align: center;
-  font-weight: bolder;
-}
-
-.hamCentering20:hover {
-  color: rgb(161, 161, 161);
-  text-align: center;
-  font-weight: bolder;
-}
-
-.hamCentering3:hover {
-  text-align: center;
-  font-weight: bolder;
-  background: green($color: #8d2c2c);
-  color: rgb(161, 161, 161);
-  cursor: pointer;
-}
-
 a {
   color: #900;
   text-decoration: none;
 }
 
 a:hover {
-  color: rgb(161, 161, 161);
+  color: black;
   text-decoration: none;
 }
 
@@ -1522,6 +1488,10 @@ a {
   border: solid 1px black;
 }
 
+.dashboard-add-student:hover {
+  background: darken(#990000, 15%);
+}
+
 .dashboard-other-buttons {
   max-width: 115px;
   margin: auto;
@@ -1531,6 +1501,10 @@ a {
   cursor: pointer;
   padding: 3px 5px;
   border: solid 1px #900;
+}
+
+.dashboard-other-buttons:hover {
+  background: darken(#d3d3d3, 15%);
 }
 
 .student-stats-edit-student {
@@ -1543,6 +1517,9 @@ a {
   padding: 3px 5px;
   border: solid 1px black;
 }
+.student-stats-edit-student:hover {
+  background: darken(#990000, 15%);
+}
 
 .student-stats-other-buttons {
   max-width: 115px;
@@ -1554,7 +1531,6 @@ a {
   padding: 3px 5px;
   border: solid 1px #900;
 }
-
-.dashboard-add-student:hover {
-
+.student-stats-other-buttons:hover {
+  background: darken(#d3d3d3, 15%);
 }
