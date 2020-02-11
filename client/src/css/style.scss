@@ -1514,11 +1514,29 @@ a {
   color: #ffffff;
   border-radius: .25em;
   cursor: pointer;
-  padding: 3px 5px;
+  padding: 1px 5px;
   border: solid 1px black;
 }
 .student-stats-edit-student:hover {
   background: darken(#990000, 15%);
+}
+.add-student-size-adjust {
+  padding: 1px 5px;
+}
+
+.size-adjust {
+    padding: 1px 5px;
+}
+
+.size-adjust-logout-admin-dash {
+    padding: 3px 5px;
+}
+
+.size-adjust-admin-dash {
+    padding: 1px 5px;
+}
+.size-adjust-logout {
+    padding: 3px 5px;
 }
 
 .student-stats-other-buttons {
@@ -1528,9 +1546,12 @@ a {
   color: black;
   border-radius: .25em;
   cursor: pointer;
-  padding: 3px 5px;
   border: solid 1px #900;
 }
 .student-stats-other-buttons:hover {
   background: darken(#d3d3d3, 15%);
+}
+
+.hamCentering2 {
+  padding: 0px;
 }

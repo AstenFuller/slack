@@ -270,21 +270,21 @@ class DashboardContainer extends Component {
                 <ul className='navigation'>
                   <li className="hamCentering20">
                       <div 
-                        className="dashboard-other-buttons"
+                        className="dashboard-other-buttons size-adjust-admin-dash"
                         onClick={() => this.showSlackBlast()}>
                         Slack Blast
                       </div>
                   </li>
                   <li className="hamCentering20">
                       <div
-                        className="dashboard-other-buttons"
+                        className="dashboard-other-buttons size-adjust-admin-dash"
                         onClick={() => this.showConfirmAbsenteesWindow()}>
                         Absences
                       </div>
                   </li>
                   <li className="hamCentering20">
                       <div
-                        className="dashboard-add-student"
+                        className="dashboard-add-student add-student-size-adjust"
                         onClick={() => this.showStudentEditWindow({})}>
                         Add Student
                       </div>
@@ -292,7 +292,7 @@ class DashboardContainer extends Component {
                   <li className='hamCentering20'>
                     <Link
                       to={`/admin/login`}
-                      className="dashboard-other-buttons"
+                      className="dashboard-other-buttons size-adjust-logout-admin-dash"
                       onClick={() => localStorage.removeItem('token')}>
                       Logout
                     </Link>
